@@ -9,6 +9,7 @@ import { SearchPipe } from './search.pipe';
 import { FilterPipe } from './filter.pipe';
 import { VocabComponent } from './vocab/vocab.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
+import { QuizComponent } from './quiz/quiz.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SideNavComponent } from './side-nav/side-nav.component';
     SearchPipe,
     FilterPipe,
     VocabComponent,
-    SideNavComponent
+    SideNavComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,

@@ -1,12 +1,24 @@
 .w3-button:hover{color:#000!important;background-color:#6DB5C1!important}
 
+a.active{
+    background-color:#6DB5C1!important;
+}
+
+a.active:before{
+    content: "";
+    left:0px;
+    position: absolute;
+    z-index: 100;
+    border-style: solid;
+    border-width: 15px 0 15px 20px;
+    border-color: transparent transparent transparent #BADDE3;
+}
+
 .sidenav {
     height: 100%;
     width: 0;
     position: fixed;
     z-index: 2;
-    /* top: 0;
-    left: 0; */
     background-color: #96C7D0;
     overflow-x: hidden;
     transition: 0.5s;
