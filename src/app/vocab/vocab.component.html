@@ -1,0 +1,39 @@
+<div style="text-align:center">
+  <h2 class="small">Learning<span class="altHeader">Vocabulary</span></h2>
+</div>
+
+<div class="search col s12 l6">
+  <label [class.clear]="searchText" (click)="searchText = ''">
+      <input id="search" class="roundedInput" [(ngModel)]="searchText" placeholder="Search">
+  </label>
+</div>
+
+<div class="grid-container">
+  <div id="all" class="grid-item ms-grid-item-1 badge current" (click)="filterTerms($event, '')">All
+      <div id="noti-all" *ngIf="searchText && (terms | search: '' | filter : searchText).length !== 0" class="noti"></div>
+  </div>
+  <div id="gs" class="grid-item ms-grid-item-2" (click)="filterTerms($event, 'gs')">Grid Skills
+      <div id="noti-gs" *ngIf="searchText && (terms | search: 'gs' | filter : searchText).length !== 0" class="noti"></div>
+  </div>
+  <div id="tt" class="grid-item ms-grid-item-3" (click)="filterTerms($event, 'tt')">Technical Training
+      <div id="noti-tt" *ngIf="searchText && (terms | search: 'tt' | filter : searchText).length !== 0" class="noti"></div>
+  </div> 
+  <div class="center ms-grid-item-4"><div #all class="triangle-down"></div></div>
+  <div class="center ms-grid-item-5"><div #gs class="triangle-down hide-arrow"></div></div>
+  <div class="center ms-grid-item-6"><div #tt class="triangle-down hide-arrow"></div></div>
+</div>
+
+<br />
+
+<div class="term" *ngFor="let term of terms | search: filter | filter : searchText; let idx = index">
+  <button [style.backgroundColor]="idx % 2 == 0 ? '#F2F5F7' : '#F9FAFA'" class="accordion" (click)="showTerm($event)">
+      <span class="term-title">{{term.title}}</span>
+  </button>
+  <div class="panel" [style.backgroundColor]="idx % 2 == 0 ? '#F2F5F7' : '#F9FAFA'">
+      <p [innerHTML]="term.definition" class="term-definition"></p>
+  </div>
+</div>
+<div style="margin: 10px" *ngIf="(terms | search: filter | filter : searchText).length === 0">
+  No Results
+</div>
+
