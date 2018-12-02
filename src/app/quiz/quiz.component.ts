@@ -19,6 +19,24 @@ export class QuizComponent implements OnInit {
   ngOnInit() {
   }
 
+  checkAnswer(term, event){
+    if (!term){return;}
+    let panel = event.currentTarget;
+    let panels = event.currentTarget.parentElement.children;
+    if (term.title === this.randomTerm['title']){
+      panel.classList.add('correct');
+    }else{
+      panel.classList.add('wrong');
+      for (let key in panels){
+        if (panels.hasOwnProperty(key)){
+          if (panels[key].classList.contains('answer')){
+            panels[key].classList.add('correct');
+          }
+        }
+      }
+    }
+  }
+
   setRandomTerm()
   {
     this.randomTerm = this.terms[Math.floor(Math.random() * this.terms.length)];

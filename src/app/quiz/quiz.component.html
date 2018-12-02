@@ -2,14 +2,15 @@
   <span>{{randomTerm.title}}</span>
 </div>
 
-<div class="term" *ngFor="let term of randomTerms let idx = index">
-  <div class="panel" [style.backgroundColor]="idx % 2 == 0 ? '#F2F5F7' : '#F9FAFA'">
-      <p [innerHTML]="term.definition" class="term-definition"></p>
+<div class="term">
+  <div *ngFor="let term of randomTerms let idx = index" 
+      class="panel" [style.backgroundColor]="idx % 2 == 0 ? '#F2F5F7' : '#F9FAFA'"
+      [class.answer]="term.title === randomTerm.title"
+      (click)="checkAnswer(term, $event)">
+        <p [innerHTML]="term.definition" class="term-definition"></p>
   </div>
 </div>
 
 <div>
   <button type="button" (click)="setRandomTerm()">Next question</button>
 </div>
-
-<pre>{{randomTerm.definition}}</pre>
