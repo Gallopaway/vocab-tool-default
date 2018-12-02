@@ -1,0 +1,10 @@
+.panel {
+    padding: 0 18px;
+    overflow: hidden;
+    margin: 0;
+}
+
+.term-definition {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+  }
