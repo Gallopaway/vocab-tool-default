@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+
+html *
+{
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+body {
+    background-image: url(assets/images/background_v2.png);
+    background-attachment: fixed;
+    background-position: bottom;
+    -webkit-background-size: initial;
+    -moz-background-size: initial;
+    -o-background-size: initial;
+    background-size: initial;
+    background-repeat: no-repeat;
+    overflow-y: scroll;
+  }
+
+footer {
+  color: #00859B;
+  text-align: center;
+}
