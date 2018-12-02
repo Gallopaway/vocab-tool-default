@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { VocabComponent }  from './vocab/vocab.component';
 
-const routes: Routes = [];
+const routes: Routes = 
+[
+  { path: 'glossary', component: VocabComponent },
+  { path: '',
+    redirectTo: '/glossary',
+    pathMatch: 'full'
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

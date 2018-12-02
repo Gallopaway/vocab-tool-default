@@ -1,0 +1,9 @@
+<div [class.show-nav]="show" id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" (click)="show = false">&times;</a>
+  <a routerLink="/glossary" routerLinkActive="active" class="w3-button w3-block">Glossary of terms</a>
+  <a routerLink="/test" routerLinkActive="active" class="w3-button w3-block">Test yourself</a>
+</div>
+<div style="text-align:center">
+    <h2 class="small mainHeader">Learning<span class="altHeader">Vocabulary</span></h2>
+    <span class="hamburger" (click)="show = !show">&#9776;</span>
+</div>
