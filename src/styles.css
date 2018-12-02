@@ -14,10 +14,43 @@ body {
     -o-background-size: initial;
     background-size: initial;
     background-repeat: no-repeat;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
+    width: calc(100vw - 34px); /*stops resizing when no vertical scroll bar */
   }
 
 footer {
   color: #00859B;
   text-align: center;
+}
+
+.mainHeader {
+    /* color:#54656d; */
+    display:inline-block;
+    margin-top: 17px;
+}
+
+.altHeader {
+    color: #00859B;
+}
+
+h2 {
+    color:#54656d;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+h3 {
+    color: #54656D;
+    font-size: 17px;
+    font-weight: normal;
+}
+
+h2.small {
+  line-height: 20%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+h3.small {
+  line-height: 10%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }

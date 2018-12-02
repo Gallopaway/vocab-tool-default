@@ -1,0 +1,79 @@
+.w3-button:hover{color:#000!important;background-color:#6DB5C1!important}
+
+a.active{
+    background-color:#6DB5C1!important;
+}
+
+a.active:before{
+    content: "";
+    left:0px;
+    position: absolute;
+    z-index: 100;
+    border-style: solid;
+    border-width: 15px 0 15px 20px;
+    border-color: transparent transparent transparent #BADDE3;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    background-color: #96C7D0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+
+    margin-top: -8px;
+    margin-left: -8px;
+}
+
+.hamburger {
+    font-size:30px;
+    cursor:pointer;
+    float:right;
+    color:#00859B
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 17px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    background-color: #00859B;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: -3px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: #00859B;
+    z-index: -1;
+    background-color:#96C7D0
+}
+
+.show-nav{
+    width: 200px;
+}
+
+.logo{
+    height: 25px;
+    margin: 10px;
+}
+
+a {
+    font-family: 'Kalam', cursive;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}

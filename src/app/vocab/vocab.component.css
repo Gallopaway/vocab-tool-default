@@ -118,7 +118,7 @@ button:nth-child(even){
     margin: 0;
 }
 
-.mainHeader {
+/* .mainHeader {
     color:#54656d;
 }
 
@@ -146,7 +146,7 @@ h2.small {
 h3.small {
   line-height: 10%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-}
+} */
 
 .term {
   margin: 0;
@@ -267,3 +267,8 @@ input {
   left: 7px;
   font-size: 15px;
 } */
+
+
+
+
+
