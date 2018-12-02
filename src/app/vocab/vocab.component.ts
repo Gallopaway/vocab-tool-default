@@ -19,21 +19,6 @@ export class VocabComponent implements OnInit {
 
   ngOnInit() {}
 
-  filterTerms(event, filter){
-    this.filter = filter;
-    let selectedTab = event.currentTarget;
-    let tabs = event.currentTarget.parentElement.children;
-    for (var i = 0; i < tabs.length; i++) {
-      tabs[i].classList.remove('current');
-    }
-    selectedTab.classList.add('current');
-
-    this.all.nativeElement.classList.add('hide-arrow');
-    this.gs.nativeElement.classList.add('hide-arrow');
-    this.tt.nativeElement.classList.add('hide-arrow');
-    this[selectedTab.id].nativeElement.classList.remove('hide-arrow');
-  }
-
   showTerm(event)
   {
     let accordion = event.currentTarget;
