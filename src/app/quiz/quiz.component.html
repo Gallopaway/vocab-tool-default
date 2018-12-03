@@ -1,16 +1,16 @@
-<div>
-  <span>{{randomTerm.title}}</span>
+<div class="w3-center question">
+  <span><b>{{randomTerm.title}}</b> is:</span>
 </div>
 
-<div class="term">
+<div id="options" class="term">
   <div *ngFor="let term of randomTerms let idx = index" 
       class="panel" [style.backgroundColor]="idx % 2 == 0 ? '#F2F5F7' : '#F9FAFA'"
       [class.answer]="term.title === randomTerm.title"
       (click)="checkAnswer(term, $event)">
+        <div id="noti"></div>
         <p [innerHTML]="term.definition" class="term-definition"></p>
   </div>
 </div>
-
-<div>
-  <button type="button" (click)="setRandomTerm()">Next question</button>
+<div class="w3-center button" (click)="setRandomTerm($event)">
+  Next Question
 </div>

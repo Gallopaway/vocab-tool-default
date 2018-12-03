@@ -1,6 +1,6 @@
 .panel {
-    padding: 0 18px;
-    overflow: hidden;
+    position: relative;
+    padding: 2px 18px;
     margin: 0;
     cursor: pointer;
 }
@@ -17,3 +17,49 @@
 .wrong{
     border-left: 3px solid #DE007A;
 }
+
+.question{
+    margin: 25px;
+    font-size: 20px;
+}
+
+.noti-wrong {
+    position:absolute;
+    top:-6px;
+    right: 4px;
+    background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' height='15px' viewBox='0 0 17.733 17.733'%3e%3cdefs%3e%3cstyle%3e.a%7bfill:#DE007A;%7d.b%7bfill:none;stroke:%23fff;stroke-width:2px;%7d%3c/style%3e%3c/defs%3e%3cg transform='translate(-32.54 -27.578)'%3e%3cpath class='a' d='M41.366,32.6a8.866,8.866,0,1,0,8.866,8.866A8.877,8.877,0,0,0,41.366,32.6Z' transform='translate(0.04 -5.022)'/%3e%3cline class='b' x2='8' y2='8' transform='translate(37.5 32.5)'/%3e%3cline class='b' x2='8' y2='8' transform='translate(37.5 40.5) rotate(-90)'/%3e%3c/g%3e%3c/svg%3e") center / contain no-repeat;
+    color:#fff;
+    padding:8px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    width:2px;
+    height:2px;
+    text-align:center;
+    border:2px solid white;
+  }
+
+  .noti-correct {
+    position:absolute;
+    top:-6px;
+    right: 4px;
+    background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3e%3cdefs%3e%3cstyle%3e.a%7bfill:%23A2C617;%7d %3c/style%3e%3c/defs%3e%3cpath class='a' d='M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1 17l-5-5.299 1.399-1.43 3.574 3.736 6.572-7.007 1.455 1.403-8 8.597z'/%3e%3c/svg%3e") center / contain no-repeat;
+    color:#fff;
+    padding:8px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    width:2px;
+    height:2px;
+    text-align:center;
+    border:2px solid white;
+  }
+
+  .button{
+    background-color: #00859B;
+    color: #FFFFFF;
+    font-size: 18px;
+    height: 43px;
+    line-height: 42px;
+    cursor: pointer;
+  }

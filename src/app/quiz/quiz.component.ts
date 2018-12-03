@@ -13,7 +13,7 @@ export class QuizComponent implements OnInit {
   randomTermLimit:number = 3;
   constructor(private vocabService: VocabService) { 
     this.terms = vocabService.terms;
-    this.setRandomTerm();
+    this.setRandomTerm(null);
   }
 
   ngOnInit() {
@@ -24,21 +24,26 @@ export class QuizComponent implements OnInit {
     let panel = event.currentTarget;
     let panels = event.currentTarget.parentElement.children;
     if (term.title === this.randomTerm['title']){
-      panel.classList.add('correct');
-    }else{
-      panel.classList.add('wrong');
+      this.showNotification(panel, true);
+    }
+    else{
       for (let key in panels){
         if (panels.hasOwnProperty(key)){
           if (panels[key].classList.contains('answer')){
-            panels[key].classList.add('correct');
+            this.showNotification(panels[key], true);
+            break;
           }
         }
       }
+      this.showNotification(panel, false);
     }
   }
 
-  setRandomTerm()
+  setRandomTerm(event)
   {
+    if (event){
+      this.removeResultClasses();
+    }
     this.randomTerm = this.terms[Math.floor(Math.random() * this.terms.length)];
     this.setRandomTerms();
   }
@@ -64,6 +69,29 @@ export class QuizComponent implements OnInit {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  removeResultClasses(){
+    let options = document.getElementById('options').children;
+    for (let key in options){
+      if (options.hasOwnProperty(key)){
+        options[key].classList.remove('correct', 'wrong');
+      }
+    }
+  }
+
+  showNotification(panel, correct){
+    if (!panel){
+      return;
+    }
+    if (correct){
+      panel.classList.add('correct');
+      panel.children.namedItem('noti').classList.add('noti-correct');
+    }
+    else{
+      panel.classList.add('wrong');
+      panel.children.namedItem('noti').classList.add('noti-wrong');
     }
   }
 }
