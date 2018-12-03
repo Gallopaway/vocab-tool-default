@@ -77,6 +77,7 @@ export class QuizComponent implements OnInit {
     for (let key in options){
       if (options.hasOwnProperty(key)){
         options[key].classList.remove('correct', 'wrong');
+        options[key].children.namedItem('noti').classList.remove('noti-correct', 'noti-wrong');
       }
     }
   }
