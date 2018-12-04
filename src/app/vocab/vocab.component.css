@@ -218,26 +218,16 @@ input {
 #search::-ms-clear {
   display: none;
 }
-/* .inputsearch {
-  background: url(../../assets/images/search-icon-large.png) no-repeat scroll 510px 7px;
-  padding-left:30px; 
-  background-size: 36px; 
-} */
 
-/* .search .search-icon { 
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  font-size: 15px;
-} */
-
-/* .search .search-icon { 
-  position: absolute;
-  top: 24px;
-  left: 7px;
-  font-size: 15px;
-} */
-
+.side-search {
+  height: 100%;
+  position: fixed;
+  z-index: 2;
+  background-color: transparent;
+  right: 212px;
+  font-size: 13px;
+  cursor: pointer;
+}
 
 
 
