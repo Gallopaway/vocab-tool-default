@@ -20,7 +20,7 @@
 </div> -->
 
 <div id="{{letter}}" class="term" *ngFor="let letter of alphabet; let idx = index">
-  <button [style.backgroundColor]="idx % 2 == 0 ? '#F2F5F7' : '#F9FAFA'" class="accordion">
+  <button *ngIf="!searchText" [style.backgroundColor]="idx % 2 == 0 ? '#F2F5F7' : '#F9FAFA'" class="accordion">
       <span><b>{{letter}}</b></span>
   </button>
   <div class="term" *ngFor="let term of terms | search: filter | filter : searchText; let idx = index">
@@ -31,4 +31,7 @@
           <p [innerHTML]="term.definition" class="term-definition"></p>
       </div>
   </div>
+</div>
+<div style="margin: 10px" *ngIf="(terms | search: filter | filter : searchText).length === 0">
+    No Results
 </div>
