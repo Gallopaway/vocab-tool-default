@@ -224,9 +224,16 @@ input {
   position: fixed;
   z-index: 2;
   background-color: transparent;
-  right: 212px;
+  /* right: 212px; */
   font-size: 13px;
+  color:#00859B;
   cursor: pointer;
+  margin-top: 1px;
+  margin-left: 564px;
+}
+
+a {
+  text-decoration: none!important;
 }
 
 
