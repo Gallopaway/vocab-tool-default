@@ -5,8 +5,17 @@ import { Injectable } from '@angular/core';
 })
 export class VocabService {
   terms:any;
+  alphabet:any;
+  termsAlphabet:any = [];
   constructor() { 
     this.terms = this.getTerms();
+    this.alphabet = this.getAlphabet();
+  }
+
+  getAlphabet(){
+    return [
+      "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
+    ]
   }
 
   getTerms(){

@@ -11,11 +11,14 @@ export class VocabComponent implements OnInit {
   @ViewChild('gs') gs: ElementRef;
   @ViewChild('tt') tt: ElementRef;
   terms:any;
+  alphabet:any;
+  termsAlphabet:any;
   filter:string = '';
   searchText:string;
   constructor(private vocabService: VocabService) 
   {
     this.terms = vocabService.terms;
+    this.alphabet = vocabService.alphabet;
   }
 
   ngOnInit() {}
@@ -35,5 +38,9 @@ export class VocabComponent implements OnInit {
         accordion.classList.add('border')
         accordion.classList.add('margin-top');
     }
+  }
+
+  letterClick(letter){
+    
   }
 }

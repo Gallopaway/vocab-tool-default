@@ -10,6 +10,7 @@ import { FilterPipe } from './filter.pipe';
 import { VocabComponent } from './vocab/vocab.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { QuizComponent } from './quiz/quiz.component';
+import { FilterAlphabetPipe } from './filter-alphabet.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { QuizComponent } from './quiz/quiz.component';
     FilterPipe,
     VocabComponent,
     SideNavComponent,
-    QuizComponent
+    QuizComponent,
+    FilterAlphabetPipe
   ],
   imports: [
     BrowserModule,
