@@ -12,6 +12,7 @@ export class VocabComponent implements OnInit {
   @ViewChild('tt') tt: ElementRef;
   terms:any;
   alphabet:any;
+  termsAlphabet:any;
   filter:string = '';
   searchText:string;
   constructor(private vocabService: VocabService) 

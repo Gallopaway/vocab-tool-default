@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class VocabService {
   terms:any;
   alphabet:any;
+  termsAlphabet:any = [];
   constructor() { 
     this.terms = this.getTerms();
     this.alphabet = this.getAlphabet();

@@ -7,7 +7,7 @@
   <a routerLink="./" [fragment]="letter" *ngFor="let letter of alphabet" (click)="letterClick(letter)" class="w3-block">{{letter}}</a>
 </div>
 
-<div id="{{term.title.substring(0, 1)}}" class="term" *ngFor="let term of terms | search: filter | filter : searchText; let idx = index">
+<!-- <div id="{{term.title.substring(0, 1)}}" class="term" *ngFor="let term of terms | search: filter | filter : searchText; let idx = index">
   <button [style.backgroundColor]="idx % 2 == 0 ? '#F2F5F7' : '#F9FAFA'" class="accordion" (click)="showTerm($event)">
       <span class="term-title">{{term.title}}</span>
   </button>
@@ -17,4 +17,18 @@
 </div>
 <div style="margin: 10px" *ngIf="(terms | search: filter | filter : searchText).length === 0">
   No Results
+</div> -->
+
+<div id="{{letter}}" class="term" *ngFor="let letter of alphabet; let idx = index">
+  <button [style.backgroundColor]="idx % 2 == 0 ? '#F2F5F7' : '#F9FAFA'" class="accordion">
+      <span><b>{{letter}}</b></span>
+  </button>
+  <div class="term" *ngFor="let term of terms | search: filter | filter : searchText; let idx = index">
+      <button *ngIf="term.title.substring(0, 1) === letter" [style.backgroundColor]="idx % 2 == 0 ? '#F2F5F7' : '#F9FAFA'" class="accordion" (click)="showTerm($event)">
+          <span class="term-title">{{term.title}}</span>
+      </button>
+      <div *ngIf="term.title.substring(0, 1) === letter" class="panel" [style.backgroundColor]="idx % 2 == 0 ? '#F2F5F7' : '#F9FAFA'">
+          <p [innerHTML]="term.definition" class="term-definition"></p>
+      </div>
+  </div>
 </div>
