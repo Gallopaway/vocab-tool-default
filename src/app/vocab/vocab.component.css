@@ -229,7 +229,8 @@ input {
   color:#00859B;
   cursor: pointer;
   margin-top: 1px;
-  margin-left: 564px;
+  /* margin-left: 564px; */
+  right: 17px;
 }
 
 a {
