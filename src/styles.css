@@ -15,7 +15,7 @@ body {
     background-size: initial;
     background-repeat: no-repeat;
     /* overflow-y: scroll; */
-    width: calc(100vw - 34px); /*stops resizing when no vertical scroll bar */
+    /* width: calc(100vw - 34px); */
   }
 
 footer {
