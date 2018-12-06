@@ -3,8 +3,8 @@
       <input id="search" class="roundedInput" [(ngModel)]="searchText" placeholder="Search">
   </label>
 </div>
-<div class="side-search">
-  <a routerLink="./" [fragment]="letter" *ngFor="let letter of alphabet" (click)="letterClick(letter)" class="w3-block">{{letter}}</a>
+<div *ngIf="!searchText" class="side-search">
+  <a *ngFor="let letter of alphabet" href="#{{letter}}" class="w3-block">{{letter}}</a>
 </div>
 
 <div id="{{letter}}" class="term" *ngFor="let letter of alphabet; let idx = index">

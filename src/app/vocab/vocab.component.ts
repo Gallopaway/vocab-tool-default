@@ -39,8 +39,4 @@ export class VocabComponent implements OnInit {
         accordion.classList.add('margin-top');
     }
   }
-
-  letterClick(letter){
-    
-  }
 }

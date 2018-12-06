@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'vocab-tool-app';
+  view:string = "vocab";
 }
