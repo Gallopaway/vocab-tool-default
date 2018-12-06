@@ -1,4 +1,14 @@
 <div class="app">
-  <app-side-nav></app-side-nav>
-  <router-outlet></router-outlet>
+  <div [class.show-nav]="show" id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" (click)="show = false">&times;</a>
+    <a class="w3-button w3-block" [class.active]="view === 'vocab'" (click)="view = 'vocab'; show = false">Glossary of terms</a>
+    <a class="w3-button w3-block" [class.active]="view === 'quiz'" (click)="view = 'quiz'; show = false">Test yourself</a>
+  </div>
+  <div style="text-align:center">
+      <h2 class="small mainHeader">Vocabulary<span class="altHeader">Tool</span></h2>
+      <span class="hamburger" (click)="show = !show">&#9776;</span>
+  </div>
+  <!-- components -->
+  <app-vocab *ngIf="view === 'vocab'"></app-vocab>
+  <app-quiz *ngIf="view === 'quiz'"></app-quiz>
 </div>
