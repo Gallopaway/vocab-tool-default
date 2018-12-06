@@ -4,21 +4,19 @@
   </label>
 </div>
 <div *ngIf="!searchText" class="side-search">
-  <a *ngFor="let letter of alphabet" href="#{{letter}}" class="w3-block">{{letter}}</a>
+    <a *ngFor="let letter of alphabet" href="#{{letter.toLowerCase()}}" class="w3-block">{{letter}}</a>
 </div>
 
-<div id="{{letter}}" class="term" *ngFor="let letter of alphabet; let idx = index">
-  <button *ngIf="!searchText" [style.backgroundColor]="idx % 2 == 0 ? '#F2F5F7' : '#F9FAFA'" class="accordion">
-      <span><b>{{letter}}</b></span>
-  </button>
-  <div class="term" *ngFor="let term of terms | search: filter | filter : searchText; let idx = index">
-      <button *ngIf="term.title.substring(0, 1) === letter" [style.backgroundColor]="idx % 2 == 0 ? '#F2F5F7' : '#F9FAFA'" class="accordion" (click)="showTerm($event)">
-          <span class="term-title">{{term.title}}</span>
-      </button>
-      <div *ngIf="term.title.substring(0, 1) === letter" class="panel" [style.backgroundColor]="idx % 2 == 0 ? '#F2F5F7' : '#F9FAFA'">
-          <p [innerHTML]="term.definition" class="term-definition"></p>
-      </div>
-  </div>
+<div id="{{term.title.toLowerCase()}}" class="term" *ngFor="let term of terms | search: filter | filter : searchText; let idx = index">
+    <button *ngIf="term.index !== 0" [style.backgroundColor]="idx % 2 == 0 ? '#F2F5F7' : '#F9FAFA'" class="accordion" (click)="showTerm($event)">
+        <span class="term-title capitalize">{{term.title}}</span>
+    </button>
+    <button *ngIf="term.index === 0 && !searchText" [style.backgroundColor]="idx % 2 == 0 ? '#F2F5F7' : '#F9FAFA'" class="accordion">
+            <span class="term-title capitalize"><b>{{term.title}}</b></span>
+    </button>
+    <div *ngIf="term.index !== 0" class="panel" [style.backgroundColor]="idx % 2 == 0 ? '#F2F5F7' : '#F9FAFA'">
+        <p [innerHTML]="term.definition" class="term-definition"></p>
+    </div>
 </div>
 <div style="margin: 10px" *ngIf="(terms | search: filter | filter : searchText).length === 0">
     No Results
