@@ -141,6 +141,12 @@ a {
     font-family: 'Kalam', cursive;
 }
 
+.header-container{
+    margin-right: 10px;
+    margin-left: 10px;
+    text-align:center
+}
+
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}

@@ -4,7 +4,7 @@
     <a class="w3-button w3-block" [class.active]="view === 'vocab'" (click)="view = 'vocab'; show = false">Glossary of terms</a>
     <a class="w3-button w3-block" [class.active]="view === 'quiz'" (click)="view = 'quiz'; show = false">Test yourself</a>
   </div>
-  <div style="text-align:center">
+  <div class="header-container">
       <h2 class="small mainHeader">Vocabulary<span class="altHeader">Tool</span></h2>
       <span class="hamburger" (click)="show = !show">&#9776;</span>
   </div>
