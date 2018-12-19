@@ -11,6 +11,7 @@ export class QuizComponent implements OnInit {
   randomTerm: object;
   randomTerms: any = [];
   randomTermLimit:number = 3;
+  answered:boolean = false;
   constructor(private vocabService: VocabService) { 
     this.terms = vocabService.terms;
     this.setRandomTerm(null);
@@ -21,6 +22,7 @@ export class QuizComponent implements OnInit {
 
   checkAnswer(term, event){
     if (!term){return;}
+    if (this.answered){return;}
     let panel = event.currentTarget;
     let panels = event.currentTarget.parentElement.children;
     if (term.title === this.randomTerm['title']){
@@ -37,6 +39,12 @@ export class QuizComponent implements OnInit {
       }
       this.showNotification(panel, false);
     }
+    this.answered = true;
+  }
+
+  onNextClick(event){
+    if (!this.answered){return;}
+    this.setRandomTerm(event);
   }
 
   setRandomTerm(event)
@@ -46,6 +54,7 @@ export class QuizComponent implements OnInit {
     }
     this.randomTerm = this.terms[Math.floor(Math.random() * this.terms.length)];
     this.setRandomTerms();
+    this.answered = false;
   }
 
   setRandomTerms(){

@@ -6,11 +6,12 @@
   <div *ngFor="let term of randomTerms let idx = index" 
       class="panel" [style.backgroundColor]="idx % 2 == 0 ? '#F2F5F7' : '#F9FAFA'"
       [class.answer]="term.title === randomTerm.title"
-      (click)="checkAnswer(term, $event)">
+      (click)="checkAnswer(term, $event)"
+      [style.cursor]="answered ? 'default' : 'pointer'">
         <div id="noti"></div>
         <p [innerHTML]="term.definition" class="term-definition"></p>
   </div>
 </div>
-<div class="w3-center button" (click)="setRandomTerm($event)">
+<div class="w3-center button" (click)="onNextClick($event)" [class.disabled]="!answered">
   Next Question
 </div>

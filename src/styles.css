@@ -25,6 +25,8 @@ body {
 footer {
   color: #00859B;
   text-align: center;
+  font-size: 0.83em;
+  font-weight: bold;
 }
 
 .mainHeader {

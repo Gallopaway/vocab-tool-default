@@ -64,4 +64,10 @@
     height: 43px;
     line-height: 42px;
     cursor: pointer;
+    margin-top: 30px;
+  }
+
+  .disabled{
+      background-color: #e7e7e7;
+      cursor: default;
   }
