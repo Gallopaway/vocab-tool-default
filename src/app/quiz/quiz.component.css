@@ -12,10 +12,12 @@
 
 .correct{
     border-left: 3px solid #A2C617;
+    background-color: #E7F3D6!important;
 }
 
 .wrong{
     border-left: 3px solid #DE007A;
+    background-color: #FAE8EF!important;
 }
 
 .question{
