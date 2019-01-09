@@ -62,3 +62,8 @@ h3.small {
   line-height: 10%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
+
+h5 {
+    font-size: 0.83em!important;
+    font-weight: bold!important;
+}

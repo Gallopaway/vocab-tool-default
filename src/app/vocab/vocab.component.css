@@ -133,6 +133,7 @@ button:nth-child(even){
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 17px;
   margin-top: 0px;
+  padding-right: 28px;
 }
   
 .border {
@@ -247,6 +248,12 @@ a {
 }
 /* iphone 6/7/8 plus */
 @media screen and (max-width: 414px) {
+  .side-search{
+    right: 17px;
+  }
+}
+
+@media screen and (max-width: 620px) {
   .side-search{
     right: 17px;
   }
