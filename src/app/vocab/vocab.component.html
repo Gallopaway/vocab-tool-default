@@ -3,7 +3,7 @@
       <input id="search" class="roundedInput" [(ngModel)]="searchText" placeholder="Search">
   </label>
 </div>
-<div *ngIf="!searchText" class="side-search">
+<div *ngIf="!searchText" class="side-search w3-center">
     <a *ngFor="let letter of alphabet" href="#{{letter.toLowerCase()}}" class="w3-block">{{letter}}</a>
 </div>
 
